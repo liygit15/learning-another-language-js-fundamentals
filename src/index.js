@@ -1,11 +1,11 @@
 // ======================
 //      VARIABLES
 // ======================
-// veggie = "carrot"
-// veggie = "onion"
-// let veggie = 'carrot';
-// veggie = 'onion';
-// console.log(veggie);
+// veggie = 'carrot'
+// veggie = 'onion'
+let veggie = 'carrot';
+veggie = 'onion';
+console.log(veggie);
 
 //
 //
@@ -13,18 +13,28 @@
 //      DATA STRUCTURES
 // =========================
 
-// animals = ["tiger", "panda", "raccoon"]
-// animals.append("opossum")
+// animals = ['tiger', 'panda', 'raccoon']
+// animals.append('opossum')
 
-// dog = {"name": "Sprinkles", "age": 3}
-// dog["is_friendly"] = True
+// dog = {'name': 'Sprinkles', 'age': 3}
+// dog['is_friendly'] = True
+
+
 let animals = ['tiger', 'panda', 'raccoon'];
-animals.push('oppossum');
-console.log(animals);
+animals.push('oppssum')
 
-let dog = { name: 'Sprinkle', age: 3 };
-dog.is_friendly = true;
+
+let dog = {'name': 'Sprinkles', 'age': 3};
+dog['is_friendly'] = true;
 console.log(dog);
+
+// let animals = ['tiger', 'panda', 'raccoon'];
+// animals.push('oppossum');
+// console.log(animals);
+
+// let dog = { name: 'Sprinkle', age: 3 };
+// dog.is_friendly = true;
+// console.log(dog);
 
 //
 //
@@ -35,22 +45,24 @@ console.log(dog);
 // num = 5
 // for i in range(num):
 //    print(i)
+
 let num = 5;
 for (let i = 0; i < num; i++){
     console.log(i);
 }
+
 // for animal in animals:
 //    print(animal)
 for (let animal of animals){
     console.log(animal);
 }
 // for k, v in dog.items():
-//    print(f"{k}: {v}")
-for (let [k, v] of Object.entries(dog)) {
+//    print(f'{k}: {v}')
+for (const [k, v] of Object.entries(dog)) {
     console.log(`${k}: ${v}`);
 }
 
-for (let k in dog){
+for (const k in dog){
     console.log(`${k}, ${dog[k]}`);
 }
 
@@ -62,11 +74,11 @@ for (let k in dog){
 
 // def fizzbuzz(num):
 //    if num % 3 == 0 and num % 5 == 0:
-//        return "fizzbuzz"
+//        return 'fizzbuzz'
 //    elif num % 3 == 0:
-//        return "fizz"
+//        return 'fizz'
 //    elif num % 5 == 0:
-//        return "buzz"
+//        return 'buzz'
 //    else:
 //        return num
 
@@ -131,16 +143,16 @@ class Animal {
 const animal = new Animal('Cat','Ben');
 console.log(animal.toString());
 //    def __str__(self):
-//        return f"{self.name} is a {self.species}"
+//        return f'{self.name} is a {self.species}'
 
 
 // class Dog(Animal):
 //    def __init__(self, name, trick):
-//        super().__init__(species="dog", name=name)
+//        super().__init__(species='dog', name=name)
 //        self.trick = trick
 //
 //    def __str__(self):
-//        return f"{super().__str__()} that can {self.trick}"
+//        return f'{super().__str__()} that can {self.trick}'
 
 class Dog extends Animal {
     constructor(name, trick){
