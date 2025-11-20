@@ -20,13 +20,22 @@ console.log(veggie);
 // dog['is_friendly'] = True
 
 
-let animals = ['tiger', 'panda', 'raccoon'];
+const animals = ['tiger', 'panda', 'raccoon'];
+console.log({ animals });
+console.log(animals)
 animals.push('oppssum')
 
 
-let dog = {'name': 'Sprinkles', 'age': 3};
-dog['is_friendly'] = true;
+const dog = {'name': 'Sprinkles', 'age': 3};
+dog.isFriendly = true;
 console.log(dog);
+
+
+// JS also has a Map type, though plain objects tend to be used more frequently
+const dogMap = new Map([['name', 'Sprinkles'], ['age', 3]]);
+console.log({ dogMap });
+dogMap.set('isFriendly', true);  // must use set and get, not . or [] notation
+console.log({ dogMap });
 
 // let animals = ['tiger', 'panda', 'raccoon'];
 // animals.push('oppossum');
@@ -47,8 +56,13 @@ console.log(dog);
 //    print(i)
 
 let num = 5;
-for (let i = 0; i < num; i++){
-    console.log(i);
+for (let i = 0; i < num; ){
+    console.log(i++);
+}
+
+const num1 = 5
+for (let i = 0; i < num1;) {
+  console.log(++i);
 }
 
 // for animal in animals:
@@ -129,19 +143,19 @@ console.log(fizzbuzzES61(15))
 
 // class Animal:
 //    def __init__(self,species,name):
-//        self.species = species
-//        self.name = name
-class Animal {
-    constructor(species, name) {
-        this.species = species;
-        this.name = name;
-    }
-    toString() {
-    return this.name + 'is a ' + this.species;
-    }
-}
-const animal = new Animal('Cat','Ben');
-console.log(animal.toString());
+// //        self.species = species
+// //        self.name = name
+// class Animal {
+//     constructor(species, name) {
+//         this.species = species;
+//         this.name = name;
+//     }
+//     toString() {
+//     return this.name + 'is a ' + this.species;
+//     }
+// }
+// const animal = new Animal('Cat','Ben');
+// console.log(animal.toString());
 //    def __str__(self):
 //        return f'{self.name} is a {self.species}'
 
@@ -153,6 +167,23 @@ console.log(animal.toString());
 //
 //    def __str__(self):
 //        return f'{super().__str__()} that can {self.trick}'
+
+
+class Animal {
+  constructor(species, name) {
+    this.species = species;
+    this.name = name;
+  }
+
+  toString() {
+    return `${this.name} is a ${this.species}`;
+  }
+}
+
+const a = new Animal('sloth', 'Flash');
+console.log({ a });
+console.log(`a: ${a}`);
+
 
 class Dog extends Animal {
     constructor(name, trick){
